@@ -41,7 +41,7 @@ function ipsum(){
 	
 	console.log(num);
 	
-	for(var j = 0; j <= num; j++){
+	for(var j = 0; j < num; j++){
 		newIpsum();
 	}
 }
