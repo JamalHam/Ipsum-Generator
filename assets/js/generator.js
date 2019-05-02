@@ -32,8 +32,6 @@ var sup = document.getElementById("supDawg");
 
 var num;
 
-
-
 function ipsum(){
 	sup.innerHTML = "";
 	
@@ -69,7 +67,7 @@ function newIpsum() {
 /* tools */
 
 function randomNumb(){
-	rand = Math.floor(Math.random()*(15 - 10 + 1) + 10);  
+	rand = Math.floor(Math.random()*(15 - 8 + 1) + 8);  
 }
 
 function randomizeArrayChoice(){
