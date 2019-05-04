@@ -22,6 +22,10 @@ var xzibit_Isims = [
     "Yo Dawg, I heard you went below your minimum balance, so we charged you a fee for not having any money, then charged a you another fee for not having any money to pay the fee we charged you for not having any money. ",
     "Yo Dawg, I heard you like to run, So we told the cops you did it. ",
     "Yo Dawg, I heard you like 3D printers! So I 3D printed a 3D printer Using your 3D printer, so you could 3d print while you 3D print 3D printers. ",
+    "Now that's funny Dawg. ",
+    "Yo Dawg, I heard you like keeping your data safe, So I put a hard drive in your transmission so you can back up, while you back up. ",
+    "Yo Dawg, I heard you like using wikipedia as a source, so I sourced the sources inside of wikipeia's sources. ",
+    "Yo Dawg, I heard you like Coffee, So I put a coffee maker in your car so you can crash while you crash. ",
 ];
 
 var rand;
@@ -32,17 +36,40 @@ var sup = document.getElementById("supDawg");
 
 var num;
 
+function quickClear() {
+
+    console.log("I just cleared");
+    
+    sup.innerHTML = "";
+
+    document.getElementById("paragraphs").value = "";
+}
+
 function ipsum(){
+
 	sup.innerHTML = "";
 	
 	num = document.getElementById("paragraphs").value;
 	
-	console.log(num);
-	
-	for(var j = 0; j < num; j++){
-		newIpsum();
-	}
+    console.log(num);
+    
+    if(100 < num){
+        var newp = document.createElement("h2");
+
+        var sumtext = "Please Pick a value that is less than 100 paragraphs long.";
+
+        sup.append(newp);
+
+        newp.innerText = sumtext;
+    }else{
+        for(var j = 0; j < num; j++){
+            newIpsum();
+        }
+    }
 }
+
+
+
 
 function newIpsum() {
 	
@@ -51,7 +78,7 @@ function newIpsum() {
 	//var beBack = document.createElement("br");
 	
 	sup.append(ptag);
-	
+
 	randomNumb();
 	
 	for( var i = 0; i <= rand; i++){
