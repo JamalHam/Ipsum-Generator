@@ -36,6 +36,10 @@ var sup = document.getElementById("supDawg");
 
 var num;
 
+var assignMeSomething = xzibit_Isims.slice(0);
+
+var ExtraEmpty = [];
+
 function quickClear() {
 
     console.log("I just cleared");
@@ -43,9 +47,14 @@ function quickClear() {
     sup.innerHTML = "";
 
     document.getElementById("paragraphs").value = "";
+
+    ExtraEmpty = [];
+
 }
 
 function ipsum(){
+
+    ExtraEmpty = [];
 
 	sup.innerHTML = "";
 	
@@ -64,11 +73,13 @@ function ipsum(){
     }else{
         for(var j = 0; j < num; j++){
             newIpsum();
+
+            assignMeSomething = [];
+
+            assignMeSomething = xzibit_Isims.slice(0);
         }
     }
 }
-
-
 
 
 function newIpsum() {
@@ -79,24 +90,33 @@ function newIpsum() {
 	
 	sup.append(ptag);
 
-	randomNumb();
+    randomNumb();
 	
 	for( var i = 0; i <= rand; i++){
 		
-		randomizeArrayChoice();
-		
-		ptag.append(randomArrayValue);
-		
-	}
-	
+        randomizeArrayChoice();
+        
+        ptag.append(randomArrayValue);
+    }
 }
 
 /* tools */
 
-function randomNumb(){
-	rand = Math.floor(Math.random()*(15 - 8 + 1) + 8);  
+function randomNumb(){ 
+
+    rand = Math.floor(Math.random()*(15 - 8 + 1) + 8); 
+
 }
 
 function randomizeArrayChoice(){
-	randomArrayValue = xzibit_Isims[Math.floor(Math.random() * xzibit_Isims.length)];
+
+    console.log(assignMeSomething);
+
+    randomArrayValue = assignMeSomething[Math.floor(Math.random() * assignMeSomething.length)];
+    
+    for( var i = 0; i < assignMeSomething.length; i++){
+        if(randomArrayValue == assignMeSomething[i]){
+            assignMeSomething.splice(i, 1);
+        }
+    }
 }
