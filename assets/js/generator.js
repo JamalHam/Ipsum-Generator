@@ -38,8 +38,6 @@ var num;
 
 var assignMeSomething = xzibit_Isims.slice(0);
 
-var ExtraEmpty = [];
-
 function quickClear() {
 
     console.log("I just cleared");
@@ -48,13 +46,9 @@ function quickClear() {
 
     document.getElementById("paragraphs").value = "";
 
-    ExtraEmpty = [];
-
 }
 
 function ipsum(){
-
-    ExtraEmpty = [];
 
 	sup.innerHTML = "";
 	
@@ -85,8 +79,6 @@ function ipsum(){
 function newIpsum() {
 	
 	var ptag = document.createElement("p");
-	
-	//var beBack = document.createElement("br");
 	
 	sup.append(ptag);
 
