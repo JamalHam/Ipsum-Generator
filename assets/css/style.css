@@ -53,3 +53,9 @@
 #supDawg h2{
 	margin: 0 auto;
 }
+
+#copy{
+	height: 1px;
+	width: 1px;
+	opacity: 0;
+}
