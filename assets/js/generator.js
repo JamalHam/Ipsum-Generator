@@ -29,81 +29,73 @@ var xzibit_Isims = [
 ];
 
 var rand;
-
 var randomArrayValue;
-
 var sup = document.getElementById("supDawg");
-
 var num;
-
 var assignMeSomething = xzibit_Isims.slice(0);
+var textCopy = document.getElementById("copy");
 
 function quickClear() {
-
-    console.log("I just cleared");
-    
     sup.innerHTML = "";
-
     document.getElementById("paragraphs").value = "";
-
+    textCopy.innerHTML = "";
 }
 
 function ipsum(){
-
-	sup.innerHTML = "";
-	
+    sup.innerHTML = "";
+    textCopy.innerHTML = "";
 	num = document.getElementById("paragraphs").value;
-	
-    console.log(num);
     
     if(100 < num){
         var newp = document.createElement("h2");
-
         var sumtext = "Please Pick a value that is less than 100 paragraphs long.";
-
         sup.append(newp);
-
         newp.innerText = sumtext;
+
+    }else if(num == "" || num == null){ 
+        for(var j = 0; j < 5; j++){
+            newIpsum();
+            assignMeSomething = [];
+            assignMeSomething = xzibit_Isims.slice(0);
+            if(j!=5){
+                textCopy.append("\n");
+                textCopy.append("\n");
+            }
+        }
+
     }else{
         for(var j = 0; j < num; j++){
             newIpsum();
-
             assignMeSomething = [];
-
             assignMeSomething = xzibit_Isims.slice(0);
+            if(j!=num){
+                textCopy.append("\n");
+                textCopy.append("\n");
+            }
         }
     }
 }
 
 
 function newIpsum() {
-	
 	var ptag = document.createElement("p");
-	
 	sup.append(ptag);
-
     randomNumb();
-	
 	for( var i = 0; i <= rand; i++){
-		
         randomizeArrayChoice();
-        
         ptag.append(randomArrayValue);
+        textCopy.append(randomArrayValue);
     }
 }
 
 /* tools */
 
 function randomNumb(){ 
-
     rand = Math.floor(Math.random()*(15 - 8 + 1) + 8); 
-
 }
 
 function randomizeArrayChoice(){
-
     console.log(assignMeSomething);
-
     randomArrayValue = assignMeSomething[Math.floor(Math.random() * assignMeSomething.length)];
     
     for( var i = 0; i < assignMeSomething.length; i++){
@@ -111,4 +103,10 @@ function randomizeArrayChoice(){
             assignMeSomething.splice(i, 1);
         }
     }
+}
+
+function addToClipBoard(){
+    textCopy.select();
+    textCopy.setSelectionRange(0, textCopy.value.length);
+    document.execCommand('copy');
 }

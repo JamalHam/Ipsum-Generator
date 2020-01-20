@@ -23,7 +23,12 @@
 	<br>
 	<br>
 	<div class="col-md-12 form-group main" >
-		<span class="input-group search-span"><input type="number" class="form-control" id="paragraphs" placeholder="5"><button type="button" class="btn btn-primary" onclick="ipsum()">Go!</button> <button type="button" class="btn btn-danger" onclick="quickClear()">Clear</button></span>
+		<span class="input-group search-span">
+			<input type="number" class="form-control" id="paragraphs" placeholder="5">
+			<button type="button" class="btn btn-primary" onclick="ipsum()">Go!</button>
+			<button type="button" class="btn btn-danger" onclick="quickClear()">Clear</button>
+			<button type="button" class="btn btn-success" onclick="addToClipBoard()">Copy to Clipboard</button>
+		</span>
 	</div>
 	<br>
 	<br>
@@ -32,6 +37,7 @@
 <div class="dawgPen">	
 	<div class="col-md-12" id="supDawg"></div>
 </div>
+<textarea id="copy"></textarea>
 </body>
     <script src="assets/js/generator.js"></script>
 </html>
