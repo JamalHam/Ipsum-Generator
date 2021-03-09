@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import Header from './Header';
 import HiddenInput from './HiddenInput';
-import MainInput from './MainInput'
+import MainInput from './MainInput';
+import RenderedParagraph from './RenderedParagraph';
+
 
 class App extends Component {
     render() {
@@ -9,6 +11,7 @@ class App extends Component {
             <div>
                 <Header />
                 <MainInput />
+                <RenderedParagraph />
                 <HiddenInput />
             </div>
         )
